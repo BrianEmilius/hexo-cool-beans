@@ -1,0 +1,5 @@
+$fontMinSize: 16;
+$fontMaxSize: 21;
+$fontBaseSize: ($fontMinSize / 16)em;
+
+$fontSize: calc($fontBaseSize + ($fontMaxSize - $fontMinSize) * (100vw - 412px) / (1920 - 412));

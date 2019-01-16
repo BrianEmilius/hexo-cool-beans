@@ -1,0 +1,21 @@
+/* .primaryNavigation__item + .primaryNavigation__item {
+	padding-left: 2em;
+} */
+
+.primaryNavigation__item {
+	display: inline;
+}
+
+.primaryNavigation__item::before {
+	content: '\200B';
+}
+
+.primaryNavigation__link {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+}
+
+.link__icon {
+	width: 80%;
+}
