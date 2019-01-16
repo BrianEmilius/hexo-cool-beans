@@ -6,18 +6,21 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		title= config.title
 	body
-		header
-			a(href="#!") brian emilius . com
+		a.sr-only(href="/#content") Hop til indholdet
+		header.siteHeader(arial-label="Webstedets sidehoved")
+			a.siteBrand(href="/")= config.title
 
-			nav(role="navigation")
+			nav(role="navigation", arial-label="Primær")
 				ul.primaryNavigation
+					- for (var i in theme.menu) {
 					li.primaryNavigation__item
-						a.primaryNavigation__link(href="#!") Link 1
-					li.primaryNavigation__item
-						a.primaryNavigation__link(href="#!") Link 2
-					li.primaryNavigation__item
-						a.primaryNavigation__link(href="#!") Link 3
-					li.primaryNavigation__item
-						a.primaryNavigation__link(href="#!") Link 4
+						a.primaryNavigation__link(href=url_for(theme.menu[i]))= i
+							img.link__icon(src="/media/placeholder.svg")
+					- }
 
-		block content
+		main(role="main")#content
+			block content
+
+		script(src="/scripts/css-loader.js?__inline=true")
+		noscript
+			link(rel="stylesheet", href="/css/style.css")
